@@ -1,128 +1,124 @@
-import { useState } from 'react'
-import './bai01.css'
+import { useState } from 'react';
 
-import hinh from "../img/Group 15.png"
-import hinh1 from "../img/Archive check.png"
-import hinh2 from "../img/Avatar 35.png"
-import hinh3 from "../img/List 2.png"
-import hinh4 from "../img/Image 105.png"
-import hinh5 from "../img/slider 2.png"
+import hinh from "../img/Group 15.png";
+import hinh1 from "../img/Archive check.png";
+import hinh2 from "../img/Avatar 35.png";
+import hinh3 from "../img/List 2.png";
+import hinh4 from "../img/Image 105.png";
+import hinh5 from "../img/slider 2.png";
 import sao5 from '../img/Rating 18.png';
 import sao4 from '../img/Rating 17.png';
 import sao3 from '../img/Rating 19.png';
 import sao2 from '../img/Rating 20.png';
 import sao1 from '../img/Rating 16.png';
 
-function bai01() {
-    const [isOpenType, setIsOpenType] = useState(true);
-    const [isOpenTime, setIsOpenTime] = useState(true);
-    const [isOpen, setIsOpen] = useState(true);
+function Bai01() {
+  const [isOpenType, setIsOpenType] = useState(true);
+  const [isOpenTime, setIsOpenTime] = useState(true);
+  const [isOpen, setIsOpen] = useState(true);
 
   return (
-    <>
-      <div class="container">
-        <header className="flex-container">
-          <div>
-            <img className="icon" src= {hinh} alt="Logo" />
-          </div>
-          <input type="text" className="search-input" placeholder="Tìm kiếm..." />
-          <nav className="menu">
-            <ul>
-              <li><a href="#">What to cook</a></li>
-              <li><a href="#">Recipes</a></li>
-              <li><a href="#">Ingredients</a></li>
-              <li><a href="#">Occasions</a></li>
-              <li><a href="#">About Us</a></li>
-            </ul>
-          </nav>
-          <div className="input-recipe">             
-            <i><img src={hinh1} alt="Icon" /></i>
-            <input type="button" className="button-recipe" value="Your Recipe Box" />
-          </div>
-          <div className="user-icon">
-            <img src={hinh2} alt="User Avatar" />
-          </div>    
-        </header>
-
-        <div className="body-container">
-          <section>
-            <div class="type">
-                <div className='filter'>
-                    <img src={hinh3} alt="Icon"/>
-                    <h3>Filters</h3> 
-                </div> <br />
-                <div >
-                    <div class="filter-header" onClick={() => setIsOpenType(!isOpenType)}>
-                        <span className="filter-title">Type</span>
-                        <span className="filter-icon">{isOpenType ? "▼" : "▲"}</span>
-                    </div>
-                    {isOpenType && (
-                    <div class="checkbox-container">
-                        <div class="checkbox-column">                        
-                            <label><input type="checkbox" name="cooking-method" value="pan-fried"/> Pan-fried</label>                       
-                            <label><input type="checkbox" name="cooking-method" value="grilled" checked/> Grilled</label>
-                            <label><input type="checkbox" name="cooking-method" value="sauteed"/> Sauteed</label>
-                            <label><input type="checkbox" name="cooking-method" value="steamed"/> Steamed</label>
-                        </div>
-                        <div class="checkbox-column">                      
-                            <label><input type="checkbox" name="cooking-method" value="stir-fried"/> Stir-fried</label>
-                            <label><input type="checkbox" name="cooking-method" value="roasted" checked/> Roasted</label>
-                            <label><input type="checkbox" name="cooking-method" value="baked"/> Baked</label>                        
-                            <label><input type="checkbox" name="cooking-method" value="stewed"/> Stewed</label>
-                        </div>
-                    </div>
-                    )}
-                </div>
-            </div>
-            
-            <div className="type">
-                <div class="filter-header" onClick={() => setIsOpenTime(!isOpenTime)}>
-                    <span className="filter-title">Time</span>
-                    <span className="filter-icon">{isOpenTime ? "▼" : "▲"}</span>
-                </div>
-                {isOpenTime && (
-                    <div className="time-container">
-                        <img src={hinh5} alt="" className="time-image" />
-                        <p className="time-marker time-30">30 minutes</p>
-                        <p className="time-marker time-50">50 minutes</p>
-                    </div>
-                )}
-            </div>
-            <div className="type">
-                <div className="filter-header" onClick={() => setIsOpen(!isOpen)}>
-                    <span className="filter-title">Rating</span>
-                    <span className="filter-icon">{isOpen ? "▼" : "▲"}</span>
-                </div>
-                {isOpen && (
-                    <div className="rating-container">
-                        <label><input type="checkbox" /><span className="stars"><img src={sao5} alt="" /></span></label>
-                        <label><input type="checkbox" /><span className="stars"><img src={sao4} alt="" /></span></label>
-                        <label><input type="checkbox" checked /><span className="stars"><img src={sao3} alt="" /></span></label>
-                        <label><input type="checkbox" checked /><span className="stars"><img src={sao2} alt="" /></span></label>
-                        <label><input type="checkbox" checked /><span className="stars"><img src={sao1} alt="" /></span></label>
-                    </div>
-                )}
-            </div>
-            <div className='type'>
-                <button type="button">Apply</button>
-            </div>
-          </section>
-
-          <aside>
-              <h2>Sorry, no result were found for "cakescascsa"</h2>
-              <img src={hinh4} alt="" />
-              <p>We have all your Indenpendence Day sweets covered.</p> <br />
-              <div className='list_btn'>
-                <button type="button" class="ctm-btn btn1">Sweet Cake</button>
-                <button type="button" class="ctm-btn btn2">Black Cake</button>
-                <button type="button" class="ctm-btn btn3">Pozole Verde</button>
-                <button type="button" class="ctm-btn btn4">Healthy food</button>
-              </div>
-          </aside>
+    <div className="px-4 py-2">
+      <header className="flex items-center justify-between px-5 py-3 border-b">
+        <img src={hinh} alt="Logo" className="w-20 h-10" />
+        <input type="text" className="px-3 py-2 border rounded-md" placeholder="Tìm kiếm..." />
+        <nav>
+          <ul className="flex gap-4 text-gray-500">
+            <li><a href="#" className="hover:text-blue-500">What to cook</a></li>
+            <li><a href="#" className="hover:text-blue-500">Recipes</a></li>
+            <li><a href="#" className="hover:text-blue-500">Ingredients</a></li>
+            <li><a href="#" className="hover:text-blue-500">Occasions</a></li>
+            <li><a href="#" className="hover:text-blue-500">About Us</a></li>
+          </ul>
+        </nav>
+        <div className="relative">
+          <img src={hinh1} alt="Icon" className="absolute top-1/2 left-2 transform -translate-y-1/2 w-4 h-4" />
+          <input type="button" value="Your Recipe Box" className="pl-8 py-2 bg-pink-100 text-pink-500 rounded-md cursor-pointer hover:bg-pink-200" />
         </div>
+        <img src={hinh2} alt="User Avatar" className="w-8 h-8" />
+      </header>
+
+      <div className="flex gap-6 mt-4">
+        <section className="w-1/8 space-y-4">
+          <div className="border rounded p-4">
+            <div className="flex items-center gap-2 mb-4">
+              <img src={hinh3} alt="Icon" className="w-6 h-6" />
+              <h3 className="font-semibold">Filters</h3>
+            </div>
+            <div>
+              <div className="flex justify-between cursor-pointer border-b py-2" onClick={() => setIsOpenType(!isOpenType)}>
+                <span className="font-semibold">Type</span>
+                <span>{isOpenType ? "▼" : "▲"}</span>
+              </div>
+              {isOpenType && (
+                <div className="grid grid-cols-2 gap-3 mt-3">
+                  <div className="flex flex-col gap-2">
+                    <label><input type="checkbox" /> Pan-fried</label>
+                    <label><input type="checkbox" defaultChecked /> Grilled</label>
+                    <label><input type="checkbox" /> Sauteed</label>
+                    <label><input type="checkbox" /> Steamed</label>
+                  </div>
+                  <div className="flex flex-col gap-2">
+                    <label><input type="checkbox" /> Stir-fried</label>
+                    <label><input type="checkbox" defaultChecked /> Roasted</label>
+                    <label><input type="checkbox" /> Baked</label>
+                    <label><input type="checkbox" /> Stewed</label>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+
+          <div className="border rounded p-4">
+            <div className="flex justify-between cursor-pointer border-b py-2" onClick={() => setIsOpenTime(!isOpenTime)}>
+              <span className="font-semibold">Time</span>
+              <span>{isOpenTime ? "▼" : "▲"}</span>
+            </div>
+            {isOpenTime && (
+              <div className="relative w-full mt-3">
+                <img src={hinh5} alt="Time" className="w-40" />
+                <p className="absolute text-sm">30 minutes</p>
+                <p className="absolute left-2/3 text-sm">50 minutes</p>
+              </div>
+            )}
+          </div>
+
+          <div className="border rounded p-4">
+            <div className="flex justify-between cursor-pointer border-b py-2" onClick={() => setIsOpen(!isOpen)}>
+              <span className="font-semibold">Rating</span>
+              <span>{isOpen ? "▼" : "▲"}</span>
+            </div>
+            {isOpen && (
+              <div className="flex flex-col gap-2 mt-2">
+                {[sao5, sao4, sao3, sao2, sao1].map((imgSrc, idx) => (
+                  <label key={idx} className="flex items-center gap-2">
+                    <input type="checkbox" defaultChecked={idx >= 2} />
+                    <img src={imgSrc} alt="Rating" className="w-20" />
+                  </label>
+                ))}
+              </div>
+            )}
+          </div>
+
+          <div className="border rounded p-4 text-center">
+            <button className="bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-500">Apply</button>
+          </div>
+        </section>
+
+        <aside className="w-2/3 align-items-center">
+          <h2 className="text-xl font-semibold">Sorry, no result were found for "cakescascsa"</h2>
+          <img src={hinh4} alt="Not Found" className="my-4" />
+          <p>We have all your Independence Day sweets covered.</p>
+          <div className="flex flex-wrap gap-2 mt-4">
+            <button className="bg-pink-100 text-pink-600 px-4 py-2 rounded-full">Sweet Cake</button>
+            <button className="bg-purple-100 text-purple-600 px-4 py-2 rounded-full">Black Cake</button>
+            <button className="bg-pink-50 text-pink-400 px-4 py-2 rounded-full">Pozole Verde</button>
+            <button className="bg-cyan-100 text-cyan-600 px-4 py-2 rounded-full">Healthy food</button>
+          </div>
+        </aside>
       </div>
-    </>
+    </div>
   );
 }
 
-export default bai01;
+export default Bai01;
